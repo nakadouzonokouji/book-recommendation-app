@@ -1,4 +1,5 @@
 import { Book } from '../types';
+import { generateAmazonLink, generateKindleLink } from '../utils/amazonLinks';
 
 export const booksDatabase: Book[] = [
   // 恋愛もの
@@ -7,8 +8,10 @@ export const booksDatabase: Book[] = [
     title: '君の名は。',
     author: '新海誠',
     description: '時空を超えて出会った二人の運命的な恋の物語。現代的な設定でありながら、深い感動を呼ぶ作品。',
-    amazonUrl: 'https://www.amazon.co.jp/dp/4046017708',
-    kindleUrl: 'https://www.amazon.co.jp/dp/B01K7DZLZ8',
+    asin: '4046017708',
+    kindleAsin: 'B01K7DZLZ8',
+    amazonUrl: generateAmazonLink({ asin: '4046017708' }),
+    kindleUrl: generateKindleLink({ asin: 'B01K7DZLZ8' }),
     tags: ['modern', 'contemporary', 'sweet', 'emotional', 'japanese', 'fantasy'],
     rating: 4.5,
     genre: 'romance'
@@ -18,7 +21,8 @@ export const booksDatabase: Book[] = [
     title: 'ノルウェイの森',
     author: '村上春樹',
     description: '1960年代の東京を舞台に、青春の喪失と愛の複雑さを描いた名作。',
-    amazonUrl: 'https://www.amazon.co.jp/dp/4062638312',
+    asin: '4062638312',
+    amazonUrl: generateAmazonLink({ asin: '4062638312' }),
     tags: ['historical', 'period', 'bittersweet', 'emotional', 'deep', 'japanese'],
     rating: 4.3,
     genre: 'romance'
@@ -28,7 +32,8 @@ export const booksDatabase: Book[] = [
     title: 'プライドと偏見',
     author: 'ジェーン・オースティン',
     description: '19世紀イングランドを舞台にしたエリザベスとダーシーの恋愛小説の古典。',
-    amazonUrl: 'https://www.amazon.co.jp/dp/4003230817',
+    asin: '4003230817',
+    amazonUrl: generateAmazonLink({ asin: '4003230817' }),
     tags: ['historical', 'period', 'passionate', 'dramatic', 'foreign', 'translated', 'classic'],
     rating: 4.6,
     genre: 'romance'
@@ -40,7 +45,8 @@ export const booksDatabase: Book[] = [
     title: 'ロード・オブ・ザ・リング',
     author: 'J.R.R.トールキン',
     description: '中つ国を舞台にした壮大なファンタジー冒険小説。仲間との絆と成長を描く。',
-    amazonUrl: 'https://www.amazon.co.jp/dp/4566023354',
+    asin: '4566023354',
+    amazonUrl: generateAmazonLink({ asin: '4566023354' }),
     tags: ['fantasy', 'magic', 'mythical', 'team', 'friendship', 'group', 'long', 'epic', 'detailed'],
     rating: 4.8,
     genre: 'adventure'

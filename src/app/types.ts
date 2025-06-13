@@ -25,9 +25,13 @@ export interface Book {
   coverUrl?: string;
   amazonUrl: string;
   kindleUrl?: string;
+  asin: string; // Amazon Standard Identification Number
+  kindleAsin?: string; // Kindle版のASIN（異なる場合）
   tags: string[];
   rating: number;
   genre: string;
+  price?: number; // API経由で取得する価格
+  availability?: string; // 在庫状況
 }
 
 export interface UserPreferences {
