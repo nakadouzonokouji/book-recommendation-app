@@ -156,9 +156,6 @@ function BookCard({ result, preferences, rank }: BookCardProps) {
                   </span>
                 )}
               </div>
-              <p className="text-gray-600 dark:text-gray-300 font-medium mb-3">
-                著者: {amazonData?.author || book.author}
-              </p>
             </div>
 
             {/* あらすじセクション */}
