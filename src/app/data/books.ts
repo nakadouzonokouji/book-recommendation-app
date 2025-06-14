@@ -160,8 +160,8 @@ export const booksDatabase: Book[] = [
     title: 'ハリー・ポッター 賢者の石',
     author: 'J.K.ローリング',
     description: '魔法学校ホグワーツでの少年の成長と友情を描く現代ファンタジーの金字塔。',
-    asin: '4915512371',
-    amazonUrl: generateAmazonLink({ asin: '4915512371' }),
+    asin: '4863892330',
+    amazonUrl: generateAmazonLink({ asin: '4863892330' }),
     tags: ['high-fantasy', 'magic', 'personal', 'coming-of-age', 'light', 'comedy', 'series'],
     rating: 4.7,
     genre: 'fantasy'
@@ -249,9 +249,9 @@ export const booksDatabase: Book[] = [
   },
   {
     id: 'essay_003',
-    title: 'エッセイ集',
+    title: '父の詫び状',
     author: '向田邦子',
-    description: '日常の些細な出来事を温かい視点で描いた名エッセイ集。',
+    description: '直木賞受賞作家による温かく懐かしい家族の思い出を綴った名エッセイ集。父親との関係を中心に、昭和の家庭の風景を情緒豊かに描く。',
     asin: '4167101017',
     amazonUrl: generateAmazonLink({ asin: '4167101017' }),
     tags: ['experience', 'light', 'humorous', 'witty', 'writer', 'literary'],
@@ -369,13 +369,13 @@ export const booksDatabase: Book[] = [
   },
   {
     id: 'fantasy_005',
-    title: '鋼の錬金術師',
-    author: '荒川弘',
-    description: '錬金術が発達した世界で、兄弟が失ったものを取り戻すための冒険。',
-    asin: '4757513459',
-    amazonUrl: generateAmazonLink({ asin: '4757513459' }),
+    title: '十二国記 月の影 影の海',
+    author: '小野不由美',
+    description: '異世界に召喚された女子高生が、十二の国からなる世界で自分の運命と向き合う本格ファンタジー。王と従獣麒麟の関係を軸に描かれる壮大な物語の第一作。',
+    asin: '4101240515',
+    amazonUrl: generateAmazonLink({ asin: '4101240515' }),
     tags: ['high-fantasy', 'magic', 'personal', 'coming-of-age', 'dark', 'serious'],
-    rating: 4.8,
+    rating: 4.6,
     genre: 'fantasy'
   },
 
