@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Genre, UserPreferences } from './types';
 import QuestionFlow from './components/QuestionFlow';
 import BookRecommendations from './components/BookRecommendations';
+import { useLocalStorage } from './hooks/useLocalStorage';
 
 const genres: Genre[] = [
   { id: 'romance', name: '恋愛もの', icon: '💕', description: '心温まる恋愛ストーリー' },
@@ -19,9 +20,21 @@ const genres: Genre[] = [
 type AppState = 'genre-selection' | 'question-flow' | 'recommendations';
 
 export default function Home() {
-  const [appState, setAppState] = useState<AppState>('genre-selection');
-  const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
-  const [userPreferences, setUserPreferences] = useState<UserPreferences | null>(null);
+  // LocalStorageで状態を保持
+  const [appState, setAppState, clearAppState] = useLocalStorage<AppState>('book-app-state', 'genre-selection');
+  const [selectedGenre, setSelectedGenre, clearSelectedGenre] = useLocalStorage<Genre | null>('book-selected-genre', null);
+  const [userPreferences, setUserPreferences, clearUserPreferences] = useLocalStorage<UserPreferences | null>('book-user-preferences', null);
+  
+  // 状態の整合性チェック
+  useEffect(() => {
+    // 不整合な状態をリセット
+    if (appState === 'question-flow' && !selectedGenre) {
+      setAppState('genre-selection');
+    }
+    if (appState === 'recommendations' && (!selectedGenre || !userPreferences)) {
+      setAppState('genre-selection');
+    }
+  }, [appState, selectedGenre, userPreferences, setAppState]);
 
   const handleGenreSelect = (genreId: string) => {
     const genre = genres.find(g => g.id === genreId);
@@ -48,9 +61,11 @@ export default function Home() {
   };
 
   const handleRestart = () => {
+    // すべての状態をクリア
+    clearAppState();
+    clearSelectedGenre();
+    clearUserPreferences();
     setAppState('genre-selection');
-    setSelectedGenre(null);
-    setUserPreferences(null);
   };
 
   return (
