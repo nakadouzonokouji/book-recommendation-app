@@ -24,6 +24,9 @@ export default function BookRecommendations({ preferences, onBack, onRestart }: 
     score: r.score, 
     matchedTags: r.matchedTags 
   })));
+  
+  // 推薦された本のタイトルを明確に表示
+  console.log('🎯 推薦された本のタイトル:', recommendations.map(r => r.book.title));
 
   return (
     <div className="max-w-4xl mx-auto">
@@ -91,6 +94,11 @@ function BookCard({ result, preferences, rank }: BookCardProps) {
   const { book } = result;
   const explanation = getRecommendationExplanation(result);
   const { data: amazonData, loading: amazonLoading } = useAmazonProduct(book.asin);
+  
+  // デバッグ: Amazon APIから取得したタイトルを確認
+  if (amazonData?.title && amazonData.title !== book.title) {
+    console.log(`📚 タイトル相違: DB="${book.title}" vs Amazon="${amazonData.title}"`);
+  }
 
   const handleAmazonClick = () => {
     window.open(book.amazonUrl, '_blank', 'noopener,noreferrer');
