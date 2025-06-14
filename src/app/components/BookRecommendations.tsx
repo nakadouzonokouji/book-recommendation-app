@@ -3,6 +3,7 @@
 import { UserPreferences } from '../types';
 import { recommendBooks, getRecommendationExplanation, RecommendationResult } from '../utils/recommendation';
 import { isNewBook } from '../data/newBooks';
+import { useAmazonProduct } from '../hooks/useAmazonProduct';
 
 interface BookRecommendationsProps {
   preferences: UserPreferences;
@@ -84,6 +85,7 @@ interface BookCardProps {
 function BookCard({ result, preferences, rank }: BookCardProps) {
   const { book } = result;
   const explanation = getRecommendationExplanation(result);
+  const { data: amazonData, loading: amazonLoading } = useAmazonProduct(book.asin);
 
   const handleAmazonClick = () => {
     window.open(book.amazonUrl, '_blank', 'noopener,noreferrer');
@@ -160,6 +162,58 @@ function BookCard({ result, preferences, rank }: BookCardProps) {
                   {book.rating.toFixed(1)}
                 </span>
               </div>
+            </div>
+
+            {/* Amazon リアルタイム情報 */}
+            <div className="mb-4 p-3 bg-orange-50 dark:bg-orange-900/20 rounded-lg border border-orange-200 dark:border-orange-800">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-orange-600 dark:text-orange-400 font-semibold text-sm">📦 Amazon 最新情報</span>
+                {amazonLoading && (
+                  <div className="w-4 h-4 border-2 border-orange-500 border-t-transparent rounded-full animate-spin"></div>
+                )}
+              </div>
+              
+              {amazonData ? (
+                <div className="space-y-1 text-sm">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-600 dark:text-gray-300">価格:</span>
+                    <span className="font-medium text-orange-700 dark:text-orange-300">
+                      {amazonData.price}
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-600 dark:text-gray-300">在庫:</span>
+                    <span className="text-green-600 dark:text-green-400 text-xs">
+                      {amazonData.availability}
+                    </span>
+                  </div>
+                  {amazonData.rating && (
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600 dark:text-gray-300">Amazon評価:</span>
+                      <div className="flex items-center gap-1">
+                        <span className="text-yellow-500">★</span>
+                        <span className="text-yellow-700 dark:text-yellow-300">
+                          {amazonData.rating.toFixed(1)}
+                        </span>
+                        {amazonData.reviewCount && (
+                          <span className="text-gray-500 text-xs">
+                            ({amazonData.reviewCount}件)
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                  {amazonData.isBasicData && (
+                    <div className="text-xs text-gray-500 mt-1">
+                      ※ API未設定のため基本情報のみ表示
+                    </div>
+                  )}
+                </div>
+              ) : amazonLoading ? (
+                <div className="text-sm text-gray-500">価格・在庫情報を取得中...</div>
+              ) : (
+                <div className="text-sm text-gray-500">情報取得に失敗しました</div>
+              )}
             </div>
 
             {/* 購入リンク */}

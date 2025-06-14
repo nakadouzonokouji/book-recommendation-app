@@ -4,7 +4,7 @@
 
 ### 1. GitHubリポジトリで Settings > Secrets and variables > Actions に移動
 
-### 2. 以下の3つのシークレットを追加してください：
+### 2. 以下の5つのシークレットを追加してください：
 
 #### XSERVER_FTP_HOST
 ```
@@ -24,6 +24,18 @@
 （サーバーパネルで確認できます）
 ```
 
+#### AMAZON_ACCESS_KEY_ID
+```
+Amazon Product Advertising API のアクセスキー
+PA-API 5.0 の認証情報
+```
+
+#### AMAZON_SECRET_ACCESS_KEY
+```
+Amazon Product Advertising API のシークレットキー
+PA-API 5.0 の認証情報
+```
+
 ## 📁 エックスサーバーでのFTP情報確認方法
 
 ### サーバーパネルにログイン
@@ -37,12 +49,25 @@ FTPユーザー名: ドメイン名（例：cxmainte.com）
 FTPパスワード: 設定したパスワード
 ```
 
+## 📊 Amazon PA-API 5.0 の設定方法
+
+### アソシエイツアカウントの取得
+1. **Amazon アソシエイツプログラム**に参加
+2. **PA-API 5.0 へのアクセス申請**（売上実績が必要な場合があります）
+3. **アクセスキーとシークレットキー**を取得
+
+### ⚠️ 重要な注意点
+- **PA-API設定なし**でも動作します（基本情報のみ表示）
+- **APIキー設定済み**の場合：リアルタイム価格・在庫・評価表示
+- **API制限**：1秒1リクエスト、1日8640リクエストまで
+
 ## 🚀 動作の流れ
 
 1. **masterブランチにpush** → 自動デプロイ開始
 2. **Node.js環境構築** → 依存関係インストール
-3. **Next.jsビルド** → 静的ファイル生成
-4. **FTPアップロード** → `/tools/book-recommendation/` に配置
+3. **Amazon商品情報取得** → PA-API から価格・在庫・評価情報を事前取得
+4. **Next.jsビルド** → 静的ファイル生成
+5. **FTPアップロード** → `/tools/book-recommendation/` に配置
 
 ## ⚡ 自動デプロイ後のURL
 
