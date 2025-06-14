@@ -105,18 +105,31 @@ async function fetchAmazonData() {
               }
             }
 
-            // 著者情報
+            // 著者情報（改善版）
             let author = null;
-            if (item.ItemInfo && item.ItemInfo.ByLineInfo && item.ItemInfo.ByLineInfo.Contributors) {
-              const contributors = item.ItemInfo.ByLineInfo.Contributors;
-              const authorContributor = contributors.find(contributor => 
-                contributor.Role === 'Author' || contributor.Role === '著者'
-              );
-              if (authorContributor && authorContributor.Name) {
-                author = authorContributor.Name;
-              } else if (contributors.length > 0 && contributors[0].Name) {
-                // 著者が見つからない場合は最初の貢献者を著者とする
-                author = contributors[0].Name;
+            if (item.ItemInfo) {
+              if (item.ItemInfo.ByLineInfo && item.ItemInfo.ByLineInfo.Contributors) {
+                const contributors = item.ItemInfo.ByLineInfo.Contributors;
+                
+                // より広範囲な役割を検索
+                const authorRoles = ['Author', '著者', 'Creator', '作者', 'Writer', '執筆者'];
+                const authorContributor = contributors.find(contributor => 
+                  authorRoles.includes(contributor.Role)
+                );
+                
+                if (authorContributor && authorContributor.Name) {
+                  author = authorContributor.Name;
+                } else if (contributors.length > 0 && contributors[0].Name) {
+                  author = contributors[0].Name;
+                }
+              }
+              
+              // 代替：タイトル内から著者抽出を試行
+              if (!author && item.ItemInfo.Title && item.ItemInfo.Title.DisplayValue) {
+                const titleMatch = item.ItemInfo.Title.DisplayValue.match(/[（(]([^）)]+)[）)]/);
+                if (titleMatch && titleMatch[1] && !titleMatch[1].match(/文庫|新書|単行本|ハードカバー/)) {
+                  author = titleMatch[1];
+                }
               }
             }
 
