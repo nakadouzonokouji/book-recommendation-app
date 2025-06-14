@@ -24,13 +24,13 @@
 （サーバーパネルで確認できます）
 ```
 
-#### AMAZON_ACCESS_KEY_ID
+#### AMAZON_ACCESS_KEY
 ```
 Amazon Product Advertising API のアクセスキー
 PA-API 5.0 の認証情報
 ```
 
-#### AMAZON_SECRET_ACCESS_KEY
+#### AMAZON_SECRET_KEY
 ```
 Amazon Product Advertising API のシークレットキー
 PA-API 5.0 の認証情報
