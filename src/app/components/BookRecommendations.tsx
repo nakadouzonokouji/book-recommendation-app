@@ -111,6 +111,25 @@ function BookCard({ result, preferences, rank }: BookCardProps) {
             </div>
           </div>
 
+          {/* Amazon画像 */}
+          <div className="flex-shrink-0">
+            {amazonData && amazonData.imageUrl && amazonData.imageUrl !== '/placeholder-book.svg' ? (
+              <img
+                src={amazonData.imageUrl}
+                alt={book.title}
+                className="w-24 h-32 object-cover rounded-lg shadow-md border"
+                onError={(e) => {
+                  console.error('Amazon画像読み込みエラー:', amazonData.imageUrl);
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
+            ) : (
+              <div className="w-24 h-32 bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center text-gray-400">
+                <span className="text-xs text-center">📚<br/>画像<br/>取得中</span>
+              </div>
+            )}
+          </div>
+
           {/* 本の情報 */}
           <div className="flex-grow">
             <div className="mb-4">
