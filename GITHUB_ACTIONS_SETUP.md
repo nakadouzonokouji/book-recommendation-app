@@ -67,7 +67,7 @@ FTPパスワード: 設定したパスワード
 2. **Node.js環境構築** → 依存関係インストール
 3. **Amazon商品情報取得** → PA-API から価格・在庫・評価情報を事前取得
 4. **Next.jsビルド** → 静的ファイル生成
-5. **FTPアップロード** → `/tools/book-recommendation/` に配置
+5. **FTPアップロード** → `/cxmainte.com/public_html/tools/book-recommendation/` に配置
 
 ## ⚡ 自動デプロイ後のURL
 

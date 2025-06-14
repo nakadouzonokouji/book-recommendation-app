@@ -37,7 +37,7 @@ jobs:
         username: ${{ secrets.XSERVER_FTP_USER }}
         password: ${{ secrets.XSERVER_FTP_PASS }}
         local-dir: ./out/
-        server-dir: /public_html/tools/book-recommendation/
+        server-dir: /cxmainte.com/public_html/tools/book-recommendation/
         clean: true
         clean-exclude: |
           .htaccess
