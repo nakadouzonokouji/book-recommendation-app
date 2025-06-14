@@ -33,8 +33,8 @@ export const booksDatabase: Book[] = [
     title: 'プライドと偏見',
     author: 'ジェーン・オースティン',
     description: '19世紀イングランドを舞台にしたエリザベスとダーシーの恋愛小説の古典。',
-    asin: '4334751407',
-    amazonUrl: generateAmazonLink({ asin: '4334751407' }),
+    asin: '4344428331',
+    amazonUrl: generateAmazonLink({ asin: '4344428331' }),
     tags: ['historical', 'period', 'passionate', 'dramatic', 'foreign', 'translated', 'classic'],
     rating: 4.6,
     genre: 'romance'
@@ -55,8 +55,8 @@ export const booksDatabase: Book[] = [
     title: 'アウトライダー',
     author: 'ダイアナ・ガバルドン',
     description: '時空を超えた壮大な愛の物語。18世紀スコットランドへタイムスリップした女性の運命。',
-    asin: '4150113459',
-    amazonUrl: generateAmazonLink({ asin: '4150113459' }),
+    asin: '4140056193',
+    amazonUrl: generateAmazonLink({ asin: '4140056193' }),
     tags: ['future', 'sci-fi', 'passionate', 'dramatic', 'foreign', 'translated'],
     rating: 4.4,
     genre: 'romance'
