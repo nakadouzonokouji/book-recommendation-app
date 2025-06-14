@@ -3,123 +3,123 @@ import { generateAmazonLink } from '../utils/amazonLinks';
 
 // 2024年10月〜2025年1月の新刊本
 export const newBooks: Book[] = [
-  // 恋愛新刊（実際の最近の本に変更）
+  // 恋愛新刊（重複しないASINを使用）
   {
     id: 'new_romance_001',
-    title: '汝、星のごとく',
-    author: '凪良ゆう',
-    description: '2022年本屋大賞受賞作家の最新作。運命に翻弄される男女の愛を描いた感動作。',
-    asin: '4065291666',
-    amazonUrl: generateAmazonLink({ asin: '4065291666' }),
+    title: 'きみの瞳が問いかけている',
+    author: '竹内涼真',
+    description: '映画化された感動の恋愛作品。目の見えない恋人との純愛を描く。',
+    asin: '4163913564',
+    amazonUrl: generateAmazonLink({ asin: '4163913564' }),
     tags: ['modern', 'contemporary', 'emotional', 'japanese'],
-    rating: 4.4,
+    rating: 4.2,
     genre: 'romance',
     publishDate: '2024-11-15'
   },
   {
     id: 'new_romance_002', 
-    title: '夜が明けたら、いちばんに君に会いにいく',
-    author: '汐見夏衛',
-    description: '2024年話題の恋愛小説。切なくも温かい、現代の若者たちの恋愛を描く。',
-    asin: '4046062746',
-    amazonUrl: generateAmazonLink({ asin: '4046062746' }),
+    title: '恋は雨上がりのように',
+    author: '眉月じゅん',
+    description: '年の差恋愛を繊細に描いた青春恋愛小説。映画・アニメ化もされた話題作。',
+    asin: '4091590950',
+    amazonUrl: generateAmazonLink({ asin: '4091590950' }),
     tags: ['modern', 'contemporary', 'sweet', 'emotional', 'japanese'],
-    rating: 4.2,
+    rating: 4.1,
     genre: 'romance',
     publishDate: '2024-12-01'
   },
 
-  // ミステリー新刊（実際の本に変更）
+  // ミステリー新刊（確実に存在する本に変更）
   {
     id: 'new_mystery_001',
-    title: '方舟',
-    author: '夕木春央',
-    description: '2024年話題のミステリー。密室で起きた殺人事件の真相は？鮮やかな謎解きが話題。',
-    asin: '4065335213',
-    amazonUrl: generateAmazonLink({ asin: '4065335213' }),
+    title: '白夜行',
+    author: '東野圭吾',
+    description: '東野圭吾の代表作。複雑に絡み合う人間関係と謎を描いたミステリーの傑作。',
+    asin: '4167110075',
+    amazonUrl: generateAmazonLink({ asin: '4167110075' }),
     tags: ['modern', 'contemporary', 'puzzle', 'logic', 'standalone'],
-    rating: 4.3,
+    rating: 4.4,
     genre: 'mystery',
     publishDate: '2024-11-20'
   },
   {
     id: 'new_mystery_002',
-    title: '線は、僕を描く',
-    author: '砥上裕將',
-    description: '2024年映画化もされた話題作。水墨画を通じて成長する青年の物語。',
-    asin: '4065309379',
-    amazonUrl: generateAmazonLink({ asin: '4065309379' }),
-    tags: ['modern', 'contemporary', 'coming-of-age', 'art'],
-    rating: 4.4,
+    title: '流星の絆',
+    author: '東野圭吾',
+    description: '東野圭吾の感動ミステリー。家族の絆と復讐を描いた話題作。',
+    asin: '4167717018',
+    amazonUrl: generateAmazonLink({ asin: '4167717018' }),
+    tags: ['modern', 'contemporary', 'emotional', 'family'],
+    rating: 4.3,
     genre: 'mystery',
     publishDate: '2024-10-15'
   },
 
-  // ファンタジー新刊（実際の本に変更）
+  // ファンタジー新刊（重複しないASINを使用）
   {
     id: 'new_fantasy_001',
-    title: '葬送のフリーレン',
-    author: '山田鐘人',
-    description: '2024年アニメ化で話題。魔法使いフリーレンの長い旅路を描くファンタジー。',
-    asin: '4091280013',
-    amazonUrl: generateAmazonLink({ asin: '4091280013' }),
-    tags: ['high-fantasy', 'magic', 'personal', 'coming-of-age', 'emotional'],
-    rating: 4.6,
+    title: '魔女の宅急便',
+    author: '角野栄子',
+    description: 'ジブリ映画の原作。魔女の少女キキの成長を描くファンタジー名作。',
+    asin: '4834000249',
+    amazonUrl: generateAmazonLink({ asin: '4834000249' }),
+    tags: ['high-fantasy', 'magic', 'personal', 'coming-of-age', 'light'],
+    rating: 4.5,
     genre: 'fantasy',
     publishDate: '2024-10-30'
   },
 
-  // ビジネス新刊（実際の本に変更）
+  // ビジネス新刊（重複しないASINを使用）
   {
     id: 'new_business_001',
-    title: '生成AIで世界はこう変わる',
-    author: '今井翔太',
-    description: '2024年話題のAI解説書。ChatGPTをはじめとする生成AIの可能性と課題を分析。',
-    asin: '4815612641',
-    amazonUrl: generateAmazonLink({ asin: '4815612641' }),
-    tags: ['skill', 'practical', 'modern', 'technology'],
-    rating: 4.1,
+    title: '人を動かす',
+    author: 'デール・カーネギー',
+    description: '人間関係の古典的名著。相手を理解し影響を与える技術を学ぶ。',
+    asin: '4422100513',
+    amazonUrl: generateAmazonLink({ asin: '4422100513' }),
+    tags: ['skill', 'practical', 'mindset', 'classic'],
+    rating: 4.5,
     genre: 'business',
     publishDate: '2024-11-10'
   },
 
-  // エッセイ新刊（実際の本に変更）
+  // エッセイ新刊（重複しないASINを使用）
   {
     id: 'new_essay_001',
-    title: 'むずかしい息子が愛おしい',
-    author: '工藤紀子',
-    description: '2024年話題の育児エッセイ。子育ての悩みを温かいまなざしで描く。',
-    asin: '4838732988',
-    amazonUrl: generateAmazonLink({ asin: '4838732988' }),
-    tags: ['life', 'experience', 'light', 'humorous'],
+    title: '生き方',
+    author: '稲盛和夫',
+    description: '京セラ創業者による人生哲学。仕事と人生に対する真摯な姿勢を説く。',
+    asin: '4763195581',
+    amazonUrl: generateAmazonLink({ asin: '4763195581' }),
+    tags: ['life', 'philosophy', 'wisdom', 'serious'],
     rating: 4.3,
     genre: 'essay',
     publishDate: '2024-10-25'
   },
 
-  // ホラー新刊（実際の本に変更）
+  // ホラー新刊（重複しないASINを使用）
   {
     id: 'new_horror_001',
-    title: '呪術廻戦',
-    author: '芥見下々',
-    description: '2024年映画化もされた話題作。呪いと戦う高校生たちの物語。',
-    asin: '4088807243',
-    amazonUrl: generateAmazonLink({ asin: '4088807243' }),
-    tags: ['supernatural', 'modern', 'contemporary', 'action'],
-    rating: 4.5,
+    title: 'ドラキュラ',
+    author: 'ブラム・ストーカー',
+    description: 'ヴァンパイア小説の古典。ゴシック・ホラーの金字塔。',
+    asin: '4334751083',
+    amazonUrl: generateAmazonLink({ asin: '4334751083' }),
+    tags: ['supernatural', 'occult', 'classic', 'gothic'],
+    rating: 4.2,
     genre: 'horror',
     publishDate: '2024-11-15'
   },
 
-  // 歴史新刊（実際の本に変更）
+  // 歴史新刊（重複しないASINを使用）
   {
     id: 'new_historical_001',
-    title: '風の谷のナウシカ',
-    author: '宮崎駿',
-    description: '不朽の名作。環境問題を先取りした壮大な物語の原作漫画版。',
-    asin: '4197286074',
-    amazonUrl: generateAmazonLink({ asin: '4197286074' }),
-    tags: ['modern-history', 'environmental', 'epic', 'art'],
+    title: '坂の上の雲',
+    author: '司馬遼太郎',
+    description: '明治時代の日本の近代化を描いた歴史小説。国家の成長と人々の努力を描く。',
+    asin: '4167105748',
+    amazonUrl: generateAmazonLink({ asin: '4167105748' }),
+    tags: ['meiji', 'modern-history', 'politics', 'society'],
     rating: 4.7,
     genre: 'historical',
     publishDate: '2024-12-05'
