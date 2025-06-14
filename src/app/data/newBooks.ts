@@ -7,7 +7,7 @@ export const newBooks: Book[] = [
   {
     id: 'new_romance_001',
     title: 'きみの瞳が問いかけている',
-    author: '竹内涼真',
+    author: '朝井リョウ', // 修正: 正しい原作者名
     description: '映画化された感動の恋愛作品。目の見えない恋人との純愛を描く。',
     asin: '4163913564',
     amazonUrl: generateAmazonLink({ asin: '4163913564' }),
@@ -19,7 +19,7 @@ export const newBooks: Book[] = [
   {
     id: 'new_romance_002', 
     title: '恋は雨上がりのように',
-    author: '眉月じゅん',
+    author: '眉月じゅん', // 漫画版の作者 - 小説版は別作者の可能性
     description: '年の差恋愛を繊細に描いた青春恋愛小説。映画・アニメ化もされた話題作。',
     asin: '4091590950',
     amazonUrl: generateAmazonLink({ asin: '4091590950' }),

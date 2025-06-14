@@ -44,8 +44,8 @@ export const booksDatabase: Book[] = [
     title: '世界の中心で、愛をさけぶ',
     author: '片山恭一',
     description: '高校時代の純愛と別れ、そして大人になってからの再会を描いた感動の恋愛小説。',
-    asin: '4094025065',
-    amazonUrl: generateAmazonLink({ asin: '4094025065' }),
+    asin: '4094034323', // 修正: 正しい小学館文庫版のASIN
+    amazonUrl: generateAmazonLink({ asin: '4094034323' }),
     tags: ['modern', 'contemporary', 'bittersweet', 'emotional', 'deep', 'japanese'],
     rating: 4.2,
     genre: 'romance'
