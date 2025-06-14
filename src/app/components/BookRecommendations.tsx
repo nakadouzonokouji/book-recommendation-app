@@ -2,6 +2,7 @@
 
 import { UserPreferences } from '../types';
 import { recommendBooks, getRecommendationExplanation, RecommendationResult } from '../utils/recommendation';
+import { isNewBook } from '../data/newBooks';
 
 interface BookRecommendationsProps {
   preferences: UserPreferences;
@@ -111,9 +112,16 @@ function BookCard({ result, preferences, rank }: BookCardProps) {
           {/* 本の情報 */}
           <div className="flex-grow">
             <div className="mb-4">
-              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
-                {book.title}
-              </h3>
+              <div className="flex items-center gap-2 mb-2">
+                <h3 className="text-xl font-bold text-gray-800 dark:text-white">
+                  {book.title}
+                </h3>
+                {book.publishDate && isNewBook(book.publishDate) && (
+                  <span className="bg-red-500 text-white text-xs px-2 py-1 rounded-full font-bold animate-pulse">
+                    NEW
+                  </span>
+                )}
+              </div>
               <p className="text-gray-600 dark:text-gray-300 font-medium mb-3">
                 著者: {book.author}
               </p>

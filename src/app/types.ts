@@ -32,6 +32,7 @@ export interface Book {
   genre: string;
   price?: number; // API経由で取得する価格
   availability?: string; // 在庫状況
+  publishDate?: string; // 発売日（YYYY-MM-DD形式）
 }
 
 export interface UserPreferences {

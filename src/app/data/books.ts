@@ -1,5 +1,6 @@
 import { Book } from '../types';
 import { generateAmazonLink, generateKindleLink } from '../utils/amazonLinks';
+import { newBooks } from './newBooks';
 
 export const booksDatabase: Book[] = [
   // 恋愛もの
@@ -464,7 +465,10 @@ export const booksDatabase: Book[] = [
     tags: ['edo', 'samurai', 'daily-life', 'people', 'culture', 'art', 'entertaining'],
     rating: 4.4,
     genre: 'historical'
-  }
+  },
+
+  // 新刊本（3ヶ月以内）を追加
+  ...newBooks
 ];
 
 export const getBooksByGenre = (genreId: string): Book[] => {
@@ -482,4 +486,22 @@ export const searchBooks = (query: string): Book[] => {
     book.author.toLowerCase().includes(lowerQuery) ||
     book.description.toLowerCase().includes(lowerQuery)
   );
+};
+
+// 新刊本のみを取得（3ヶ月以内）
+export const getNewBooks = (): Book[] => {
+  const threeMonthsAgo = new Date();
+  threeMonthsAgo.setMonth(threeMonthsAgo.getMonth() - 3);
+  
+  return booksDatabase.filter(book => {
+    if (!book.publishDate) return false;
+    const bookDate = new Date(book.publishDate);
+    return bookDate >= threeMonthsAgo;
+  });
+};
+
+// ジャンル別新刊本を取得
+export const getNewBooksByGenre = (genreId: string): Book[] => {
+  const newBooks = getNewBooks();
+  return newBooks.filter(book => book.genre === genreId);
 };
