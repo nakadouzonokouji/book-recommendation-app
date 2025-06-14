@@ -6,19 +6,19 @@
 
 ### 2. 以下の3つのシークレットを追加してください：
 
-#### FTP_SERVER
+#### XSERVER_FTP_HOST
 ```
 エックスサーバーのFTPサーバー名
 例: sv6095.xserver.jp
 ```
 
-#### FTP_USERNAME
+#### XSERVER_FTP_USER
 ```
 エックスサーバーのFTPユーザー名
 例: cxmainte.com
 ```
 
-#### FTP_PASSWORD
+#### XSERVER_FTP_PASS
 ```
 エックスサーバーのFTPパスワード
 （サーバーパネルで確認できます）
