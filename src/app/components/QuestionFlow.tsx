@@ -140,7 +140,7 @@ export default function QuestionFlow({ selectedGenre, onComplete, onBack }: Ques
         {/* 戻るボタン */}
         <button
           onClick={currentQuestionIndex > 0 ? handlePrevious : onBack}
-          className="flex items-center gap-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 font-medium py-2 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+          className="flex items-center gap-2 bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
         >
           ← {currentQuestionIndex > 0 ? '前の質問' : 'ジャンル選択'}
         </button>
