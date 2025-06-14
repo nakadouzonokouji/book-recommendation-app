@@ -32,7 +32,10 @@ export const useAmazonProduct = (asin: string) => {
       try {
         // ビルド時に生成されたJSONファイルから情報を取得
         console.log(`🔍 Amazon情報取得開始: ASIN=${asin}`);
-        const response = await fetch('/tools/book-recommendation/amazon-data.json');
+        const basePath = typeof window !== 'undefined' && window.location.pathname.includes('/tools/book-recommendation') 
+          ? '/tools/book-recommendation' 
+          : '';
+        const response = await fetch(`${basePath}/amazon-data.json`);
         
         console.log(`📡 JSONファイル取得: status=${response.status}`);
         if (!response.ok) {

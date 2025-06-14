@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "prebuild": "node scripts/fetch-amazon-data.js",
     "build": "next build",
-    "build:export": "next build && next export",
+    "postbuild": "cp public/amazon-data.json out/ 2>/dev/null || true",
     "start": "next start",
     "lint": "next lint"
   },

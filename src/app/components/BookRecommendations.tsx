@@ -18,7 +18,12 @@ export default function BookRecommendations({ preferences, onBack, onRestart }: 
   console.log('Genre:', preferences.genreId);
   console.log('User preferences tags:', preferences.tags);
   console.log('Recommendations found:', recommendations.length);
-  console.log('Recommendations:', recommendations);
+  console.log('Recommendations:', recommendations.map(r => ({ 
+    title: r.book.title, 
+    genre: r.book.genre, 
+    score: r.score, 
+    matchedTags: r.matchedTags 
+  })));
 
   return (
     <div className="max-w-4xl mx-auto">

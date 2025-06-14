@@ -72,11 +72,11 @@ export const newBooks: Book[] = [
   // ビジネス新刊（重複しないASINを使用）
   {
     id: 'new_business_001',
-    title: '人を動かす',
-    author: 'デール・カーネギー',
-    description: '人間関係の古典的名著。相手を理解し影響を与える技術を学ぶ。',
-    asin: '4422100513',
-    amazonUrl: generateAmazonLink({ asin: '4422100513' }),
+    title: '思考は現実化する',
+    author: 'ナポレオン・ヒル',
+    description: '成功哲学の古典的名著。目標達成のための具体的な方法論を学ぶ。',
+    asin: '4877710515',
+    amazonUrl: generateAmazonLink({ asin: '4877710515' }),
     tags: ['skill', 'practical', 'mindset', 'classic'],
     rating: 4.5,
     genre: 'business',
@@ -86,11 +86,11 @@ export const newBooks: Book[] = [
   // エッセイ新刊（重複しないASINを使用）
   {
     id: 'new_essay_001',
-    title: '生き方',
-    author: '稲盛和夫',
-    description: '京セラ創業者による人生哲学。仕事と人生に対する真摯な姿勢を説く。',
-    asin: '4763195581',
-    amazonUrl: generateAmazonLink({ asin: '4763195581' }),
+    title: '道をひらく',
+    author: '松下幸之助',
+    description: 'パナソニック創業者による人生指南書。逆境を乗り越える知恵と勇気を与える。',
+    asin: '4569534074',
+    amazonUrl: generateAmazonLink({ asin: '4569534074' }),
     tags: ['life', 'philosophy', 'wisdom', 'serious'],
     rating: 4.3,
     genre: 'essay',
@@ -100,11 +100,11 @@ export const newBooks: Book[] = [
   // ホラー新刊（重複しないASINを使用）
   {
     id: 'new_horror_001',
-    title: 'ドラキュラ',
-    author: 'ブラム・ストーカー',
-    description: 'ヴァンパイア小説の古典。ゴシック・ホラーの金字塔。',
-    asin: '4334751083',
-    amazonUrl: generateAmazonLink({ asin: '4334751083' }),
+    title: 'フランケンシュタイン',
+    author: 'メアリー・シェリー',
+    description: 'SFホラーの古典的名作。科学者が創造した怪物との悲劇的な物語。',
+    asin: '4003220218',
+    amazonUrl: generateAmazonLink({ asin: '4003220218' }),
     tags: ['supernatural', 'occult', 'classic', 'gothic'],
     rating: 4.2,
     genre: 'horror',
@@ -114,12 +114,12 @@ export const newBooks: Book[] = [
   // 歴史新刊（重複しないASINを使用）
   {
     id: 'new_historical_001',
-    title: '坂の上の雲',
+    title: '国盗り物語',
     author: '司馬遼太郎',
-    description: '明治時代の日本の近代化を描いた歴史小説。国家の成長と人々の努力を描く。',
-    asin: '4167105748',
-    amazonUrl: generateAmazonLink({ asin: '4167105748' }),
-    tags: ['meiji', 'modern-history', 'politics', 'society'],
+    description: '戦国時代の武将・斎藤道三と織田信長の生涯を描いた歴史小説の傑作。',
+    asin: '4167105594',
+    amazonUrl: generateAmazonLink({ asin: '4167105594' }),
+    tags: ['sengoku', 'edo', 'politics', 'war', 'society'],
     rating: 4.7,
     genre: 'historical',
     publishDate: '2024-12-05'

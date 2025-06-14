@@ -6,8 +6,8 @@ async function fetchAmazonData() {
   console.log('🔍 Amazon商品情報の事前取得を開始...');
 
   // 環境変数の確認（GitHub Actionsでの実際の変数名に対応）
-  const accessKey = process.env.AMAZON_ACCESS_KEY_ID || process.env.AMAZON_ACCESS_KEY;
-  const secretKey = process.env.AMAZON_SECRET_ACCESS_KEY || process.env.AMAZON_SECRET_KEY;
+  const accessKey = process.env.AMAZON_ACCESS_KEY;
+  const secretKey = process.env.AMAZON_SECRET_KEY;
   const partnerTag = process.env.NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG || 'asdfghj12-22';
 
   console.log('🔑 環境変数確認:');
