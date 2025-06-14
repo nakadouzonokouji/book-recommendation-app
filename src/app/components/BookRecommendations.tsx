@@ -158,6 +158,40 @@ function BookCard({ result, preferences, rank }: BookCardProps) {
               </div>
             </div>
 
+            {/* 参考情報としてのあらすじ */}
+            <div className="mb-4">
+              <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2 uppercase tracking-wide">
+                📖 内容紹介（参考）
+              </h4>
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm bg-gray-50 dark:bg-gray-700/50 p-3 rounded-lg border-l-4 border-gray-400 italic">
+                {book.description}
+              </p>
+              <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">
+                ※ 表示された本と内容が異なる場合があります
+              </p>
+            </div>
+
+            {/* ジャンル・出版情報 */}
+            <div className="mb-4 flex flex-wrap gap-2">
+              <span className="bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-xs px-2 py-1 rounded-full font-medium">
+                📚 {book.genre === 'romance' ? '恋愛' : 
+                     book.genre === 'adventure' ? '冒険・アクション' : 
+                     book.genre === 'mystery' ? 'ミステリー' : 
+                     book.genre === 'fantasy' ? 'ファンタジー・SF' : 
+                     book.genre === 'business' ? 'ビジネス・自己啓発' : 
+                     book.genre === 'essay' ? 'エッセイ・ノンフィクション' : 
+                     book.genre === 'horror' ? 'ホラー・スリラー' : 
+                     book.genre === 'historical' ? '歴史・時代小説' : book.genre}
+              </span>
+              <span className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs px-2 py-1 rounded-full font-medium">
+                🔖 ASIN: {book.asin}
+              </span>
+              {book.publishDate && (
+                <span className="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs px-2 py-1 rounded-full font-medium">
+                  📅 {new Date(book.publishDate).getFullYear()}年
+                </span>
+              )}
+            </div>
 
             {/* おすすめ理由 */}
             <div className="mb-4 p-3 bg-blue-50 dark:bg-blue-900/30 rounded-lg">
