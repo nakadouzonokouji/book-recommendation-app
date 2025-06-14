@@ -158,18 +158,6 @@ function BookCard({ result, preferences, rank }: BookCardProps) {
               </div>
             </div>
 
-            {/* 参考情報としてのあらすじ */}
-            <div className="mb-4">
-              <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2 uppercase tracking-wide">
-                📖 内容紹介（参考）
-              </h4>
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm bg-gray-50 dark:bg-gray-700/50 p-3 rounded-lg border-l-4 border-gray-400 italic">
-                {book.description}
-              </p>
-              <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">
-                ※ 表示された本と内容が異なる場合があります
-              </p>
-            </div>
 
             {/* ジャンル・出版情報 */}
             <div className="mb-4 flex flex-wrap gap-2">
