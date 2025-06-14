@@ -171,6 +171,10 @@ function BookCard({ result, preferences, rank }: BookCardProps) {
                 {amazonLoading && (
                   <div className="w-4 h-4 border-2 border-orange-500 border-t-transparent rounded-full animate-spin"></div>
                 )}
+                {/* デバッグ情報 */}
+                <span className="text-xs text-gray-500">
+                  (ASIN: {book.asin})
+                </span>
               </div>
               
               {amazonData ? (
@@ -208,11 +212,26 @@ function BookCard({ result, preferences, rank }: BookCardProps) {
                       ※ API未設定のため基本情報のみ表示
                     </div>
                   )}
+                  {amazonData.isRealData && (
+                    <div className="text-xs text-green-600 mt-1">
+                      ✅ Amazon API から取得済み
+                    </div>
+                  )}
+                  {amazonData.error && (
+                    <div className="text-xs text-red-500 mt-1">
+                      ❌ エラー: {amazonData.error}
+                    </div>
+                  )}
                 </div>
               ) : amazonLoading ? (
                 <div className="text-sm text-gray-500">価格・在庫情報を取得中...</div>
               ) : (
-                <div className="text-sm text-gray-500">情報取得に失敗しました</div>
+                <div className="text-sm text-red-500">
+                  ❌ 情報取得に失敗しました
+                  <div className="text-xs mt-1">
+                    JSONファイルまたはネットワークエラー
+                  </div>
+                </div>
               )}
             </div>
 

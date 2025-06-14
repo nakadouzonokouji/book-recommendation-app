@@ -30,17 +30,23 @@ export const useAmazonProduct = (asin: string) => {
 
       try {
         // ビルド時に生成されたJSONファイルから情報を取得
+        console.log(`🔍 Amazon情報取得開始: ASIN=${asin}`);
         const response = await fetch('/tools/book-recommendation/amazon-data.json');
         
+        console.log(`📡 JSONファイル取得: status=${response.status}`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
 
         const allData = await response.json();
+        console.log('📊 JSONデータ取得成功、キー数:', Object.keys(allData).length);
+        
         const productData = allData[asin];
+        console.log(`🎯 ASIN=${asin}のデータ:`, productData ? '✅見つかった' : '❌見つからない');
         
         if (productData) {
           setData(productData);
+          console.log('✅ Amazon情報設定完了:', productData);
         } else {
           throw new Error('Product data not found');
         }
