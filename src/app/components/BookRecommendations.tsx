@@ -144,7 +144,7 @@ function BookCard({ result, preferences, rank }: BookCardProps) {
                 )}
               </div>
               <p className="text-gray-600 dark:text-gray-300 font-medium mb-3">
-                著者: {book.author}
+                著者: {amazonData?.author || book.author}
               </p>
             </div>
 

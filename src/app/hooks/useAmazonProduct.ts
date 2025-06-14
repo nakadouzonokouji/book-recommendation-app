@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 interface AmazonProductData {
   asin: string;
   title: string;
+  author?: string;
   price: string;
   availability: string;
   imageUrl: string;
@@ -58,6 +59,7 @@ export const useAmazonProduct = (asin: string) => {
         setData({
           asin: asin,
           title: '商品情報取得エラー',
+          author: null,
           price: 'Amazon で確認',
           availability: 'Amazon で確認',
           imageUrl: '/placeholder-book.svg',

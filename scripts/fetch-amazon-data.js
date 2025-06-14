@@ -105,6 +105,21 @@ async function fetchAmazonData() {
               }
             }
 
+            // 著者情報
+            let author = null;
+            if (item.ItemInfo && item.ItemInfo.ByLineInfo && item.ItemInfo.ByLineInfo.Contributors) {
+              const contributors = item.ItemInfo.ByLineInfo.Contributors;
+              const authorContributor = contributors.find(contributor => 
+                contributor.Role === 'Author' || contributor.Role === '著者'
+              );
+              if (authorContributor && authorContributor.Name) {
+                author = authorContributor.Name;
+              } else if (contributors.length > 0 && contributors[0].Name) {
+                // 著者が見つからない場合は最初の貢献者を著者とする
+                author = contributors[0].Name;
+              }
+            }
+
             // 画像URL
             let imageUrl = '/placeholder-book.svg';
             if (item.Images && item.Images.Primary && item.Images.Primary.Medium && item.Images.Primary.Medium.URL) {
@@ -114,6 +129,7 @@ async function fetchAmazonData() {
             amazonData[asin] = {
               asin,
               title: item.ItemInfo.Title.DisplayValue || '商品名未取得',
+              author,
               price,
               availability,
               imageUrl,
@@ -136,6 +152,7 @@ async function fetchAmazonData() {
           amazonData[asin] = {
             asin,
             title: '商品情報取得エラー',
+            author: null,
             price: 'Amazon で確認',
             availability: 'Amazon で確認',
             imageUrl: '/placeholder-book.svg',
