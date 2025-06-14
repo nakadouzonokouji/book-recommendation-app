@@ -11,15 +11,18 @@ export const recommendBooks = (preferences: UserPreferences, limit: number = 5):
   // ジャンルでフィルタリング
   const genreBooks = booksDatabase.filter(book => book.genre === preferences.genreId);
   
+  console.log(`Found ${genreBooks.length} books for genre: ${preferences.genreId}`);
+  
   // 各本にスコアを計算
   const scoredBooks: RecommendationResult[] = genreBooks.map(book => {
     const matchedTags = book.tags.filter(tag => preferences.tags.includes(tag));
     const tagMatchScore = matchedTags.length;
-    const tagMatchRatio = matchedTags.length / preferences.tags.length;
+    const tagMatchRatio = preferences.tags.length > 0 ? matchedTags.length / preferences.tags.length : 0;
     const ratingBonus = book.rating * 0.2; // 評価をボーナスとして追加
     
     // スコア計算: タグマッチ数 + タグマッチ率 + 評価ボーナス
-    const score = tagMatchScore + tagMatchRatio + ratingBonus;
+    // タグマッチがない場合でも評価ボーナスで順位が決まる
+    const score = tagMatchScore * 2 + tagMatchRatio + ratingBonus;
     
     return {
       book,
@@ -31,8 +34,10 @@ export const recommendBooks = (preferences: UserPreferences, limit: number = 5):
   // スコア順でソート（降順）
   scoredBooks.sort((a, b) => b.score - a.score);
   
-  // 上位の本を返す
-  return scoredBooks.slice(0, limit);
+  console.log('Scored books:', scoredBooks.map(b => ({ title: b.book.title, score: b.score, matchedTags: b.matchedTags.length })));
+  
+  // 上位の本を返す（ジャンル内の全ての本が対象）
+  return scoredBooks.slice(0, Math.min(limit, genreBooks.length));
 };
 
 export const getRecommendationExplanation = (result: RecommendationResult, preferences: UserPreferences): string => {

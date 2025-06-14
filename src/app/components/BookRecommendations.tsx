@@ -11,6 +11,12 @@ interface BookRecommendationsProps {
 
 export default function BookRecommendations({ preferences, onBack, onRestart }: BookRecommendationsProps) {
   const recommendations = recommendBooks(preferences, 5);
+  
+  // デバッグ情報をコンソールに出力
+  console.log('Genre:', preferences.genreId);
+  console.log('User preferences tags:', preferences.tags);
+  console.log('Recommendations found:', recommendations.length);
+  console.log('Recommendations:', recommendations);
 
   return (
     <div className="max-w-4xl mx-auto">
