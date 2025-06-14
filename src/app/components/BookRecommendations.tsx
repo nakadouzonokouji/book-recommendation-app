@@ -95,10 +95,6 @@ function BookCard({ result, preferences, rank }: BookCardProps) {
   const explanation = getRecommendationExplanation(result);
   const { data: amazonData, loading: amazonLoading } = useAmazonProduct(book.asin);
   
-  // デバッグ: Amazon APIから取得したタイトルを確認
-  if (amazonData?.title && amazonData.title !== book.title) {
-    console.log(`📚 タイトル相違: DB="${book.title}" vs Amazon="${amazonData.title}"`);
-  }
 
   const handleAmazonClick = () => {
     window.open(book.amazonUrl, '_blank', 'noopener,noreferrer');
@@ -148,7 +144,7 @@ function BookCard({ result, preferences, rank }: BookCardProps) {
             <div className="mb-4">
               <div className="flex items-center gap-2 mb-2">
                 <h3 className="text-xl font-bold text-gray-800 dark:text-white">
-                  {amazonData?.title || book.title}
+                  {book.title}
                 </h3>
                 {book.publishDate && isNewBook(book.publishDate) && (
                   <span className="bg-red-500 text-white text-xs px-2 py-1 rounded-full font-bold animate-pulse">
