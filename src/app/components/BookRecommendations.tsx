@@ -231,11 +231,6 @@ function BookCard({ result, preferences, rank }: BookCardProps) {
                       ※ API未設定のため基本情報のみ表示
                     </div>
                   )}
-                  {amazonData.isRealData && (
-                    <div className="text-xs text-green-600 mt-1">
-                      ✅ Amazon API から取得済み
-                    </div>
-                  )}
                   {amazonData.error && (
                     <div className="text-xs text-red-500 mt-1">
                       ❌ エラー: {amazonData.error}
