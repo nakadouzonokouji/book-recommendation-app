@@ -114,13 +114,17 @@ function BookCard({ result, preferences, rank }: BookCardProps) {
               <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
                 {book.title}
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 font-medium">
+              <p className="text-gray-600 dark:text-gray-300 font-medium mb-3">
                 著者: {book.author}
               </p>
             </div>
 
+            {/* あらすじセクション */}
             <div className="mb-4">
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2 uppercase tracking-wide">
+                📖 あらすじ
+              </h4>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm bg-gray-50 dark:bg-gray-700/50 p-3 rounded-lg border-l-4 border-blue-400">
                 {book.description}
               </p>
             </div>
