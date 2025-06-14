@@ -1,5 +1,5 @@
 import { Book } from '../types';
-import { generateAmazonLink, generateKindleLink } from '../utils/amazonLinks';
+import { generateAmazonLink } from '../utils/amazonLinks';
 
 // 2024年10月〜2025年1月の新刊本
 export const newBooks: Book[] = [
@@ -91,7 +91,7 @@ export const newBooks: Book[] = [
     description: '2024年10月発売。令和の時代を生きる人々の等身大の想いを綴ったエッセイ集。共感必至の現代人の心境。',
     asin: '4041000006',
     amazonUrl: generateAmazonLink({ asin: '4041000006' }),
-    tags: ['life', 'philosophy', 'personal', 'experience', 'modern'],
+    tags: ['life', 'philosophy', 'experience', 'modern'],
     rating: 4.2,
     genre: 'essay',
     publishDate: '2024-10-15'

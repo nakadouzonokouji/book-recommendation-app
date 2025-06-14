@@ -230,7 +230,8 @@ export const booksDatabase: Book[] = [
     title: '生き方',
     author: '稲盛和夫',
     description: '京セラ創業者による人生哲学。仕事と人生に対する真摯な姿勢を説く。',
-    amazonUrl: 'https://www.amazon.co.jp/dp/4763195581',
+    asin: '4763195581',
+    amazonUrl: generateAmazonLink({ asin: '4763195581' }),
     tags: ['life', 'philosophy', 'wisdom', 'serious', 'thought-provoking', 'famous', 'celebrity'],
     rating: 4.3,
     genre: 'essay'
@@ -240,8 +241,9 @@ export const booksDatabase: Book[] = [
     title: '夜と霧',
     author: 'ヴィクトール・E・フランクル',
     description: '強制収容所での体験を通して人間の尊厳と生きる意味を問う名著。',
-    amazonUrl: 'https://www.amazon.co.jp/dp/4622006014',
-    tags: ['life', 'philosophy', 'personal', 'experience', 'serious', 'deep', 'emotional', 'touching'],
+    asin: '4622006014',
+    amazonUrl: generateAmazonLink({ asin: '4622006014' }),
+    tags: ['life', 'philosophy', 'experience', 'serious', 'deep', 'emotional', 'touching'],
     rating: 4.6,
     genre: 'essay'
   },
@@ -250,8 +252,9 @@ export const booksDatabase: Book[] = [
     title: 'エッセイ集',
     author: '向田邦子',
     description: '日常の些細な出来事を温かい視点で描いた名エッセイ集。',
-    amazonUrl: 'https://www.amazon.co.jp/dp/4167101017',
-    tags: ['personal', 'experience', 'light', 'humorous', 'witty', 'writer', 'literary'],
+    asin: '4167101017',
+    amazonUrl: generateAmazonLink({ asin: '4167101017' }),
+    tags: ['experience', 'light', 'humorous', 'witty', 'writer', 'literary'],
     rating: 4.4,
     genre: 'essay'
   },
@@ -262,7 +265,8 @@ export const booksDatabase: Book[] = [
     title: 'シャイニング',
     author: 'スティーヴン・キング',
     description: '雪に閉ざされたホテルで起こる恐怖の物語。心理的恐怖の傑作。',
-    amazonUrl: 'https://www.amazon.co.jp/dp/416710511X',
+    asin: '416710511X',
+    amazonUrl: generateAmazonLink({ asin: '416710511X' }),
     tags: ['psychological', 'creepy', 'unsettling', 'modern', 'contemporary', 'intense', 'terrifying'],
     rating: 4.4,
     genre: 'horror'
@@ -272,7 +276,8 @@ export const booksDatabase: Book[] = [
     title: 'ドラキュラ',
     author: 'ブラム・ストーカー',
     description: 'ヴァンパイア小説の古典。ゴシック・ホラーの金字塔。',
-    amazonUrl: 'https://www.amazon.co.jp/dp/4334751083',
+    asin: '4334751083',
+    amazonUrl: generateAmazonLink({ asin: '4334751083' }),
     tags: ['supernatural', 'occult', 'paranormal', 'classic', 'period', 'gothic', 'moderate'],
     rating: 4.2,
     genre: 'horror'
@@ -282,7 +287,8 @@ export const booksDatabase: Book[] = [
     title: 'リング',
     author: '鈴木光司',
     description: '呪いのビデオテープをめぐる現代ホラーの名作。じわじわとした恐怖が特徴。',
-    amazonUrl: 'https://www.amazon.co.jp/dp/4043520018',
+    asin: '4043520018',
+    amazonUrl: generateAmazonLink({ asin: '4043520018' }),
     tags: ['supernatural', 'occult', 'modern', 'contemporary', 'psychological', 'moderate'],
     rating: 4.3,
     genre: 'horror'
@@ -294,7 +300,8 @@ export const booksDatabase: Book[] = [
     title: '竜馬がゆく',
     author: '司馬遼太郎',
     description: '幕末の志士・坂本龍馬の生涯を描いた歴史小説の名作。',
-    amazonUrl: 'https://www.amazon.co.jp/dp/4167105667',
+    asin: '4167105667',
+    amazonUrl: generateAmazonLink({ asin: '4167105667' }),
     tags: ['sengoku', 'edo', 'politics', 'war', 'power', 'modern-style', 'accessible', 'entertaining'],
     rating: 4.6,
     genre: 'historical'
@@ -304,8 +311,9 @@ export const booksDatabase: Book[] = [
     title: '源氏物語',
     author: '紫式部（現代語訳：瀬戸内寂聴）',
     description: '平安時代の宮廷を舞台にした古典文学の最高峰。',
-    amazonUrl: 'https://www.amazon.co.jp/dp/4061593625',
-    tags: ['ancient', 'heian', 'culture', 'art', 'daily-life', 'classical', 'formal', 'traditional'],
+    asin: '4061593625',
+    amazonUrl: generateAmazonLink({ asin: '4061593625' }),
+    tags: ['ancient', 'heian', 'art', 'daily-life', 'classical', 'formal', 'traditional'],
     rating: 4.5,
     genre: 'historical'
   },
@@ -414,7 +422,7 @@ export const booksDatabase: Book[] = [
     description: 'ちびまる子ちゃんの作者による温かいエッセイ集。日常の小さな幸せを描く。',
     asin: '4087745066',
     amazonUrl: generateAmazonLink({ asin: '4087745066' }),
-    tags: ['personal', 'experience', 'light', 'humorous', 'witty', 'famous', 'celebrity'],
+    tags: ['experience', 'light', 'humorous', 'witty', 'famous', 'celebrity'],
     rating: 4.2,
     genre: 'essay'
   },
@@ -462,7 +470,7 @@ export const booksDatabase: Book[] = [
     description: '江戸時代の武士の生き様を描いた時代小説。名誉と友情の物語。',
     asin: '4396335148',
     amazonUrl: generateAmazonLink({ asin: '4396335148' }),
-    tags: ['edo', 'samurai', 'daily-life', 'people', 'culture', 'art', 'entertaining'],
+    tags: ['edo', 'samurai', 'daily-life', 'people', 'art', 'entertaining'],
     rating: 4.4,
     genre: 'historical'
   },

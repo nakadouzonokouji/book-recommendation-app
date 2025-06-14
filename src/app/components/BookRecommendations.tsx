@@ -83,7 +83,7 @@ interface BookCardProps {
 
 function BookCard({ result, preferences, rank }: BookCardProps) {
   const { book } = result;
-  const explanation = getRecommendationExplanation(result, preferences);
+  const explanation = getRecommendationExplanation(result);
 
   const handleAmazonClick = () => {
     window.open(book.amazonUrl, '_blank', 'noopener,noreferrer');

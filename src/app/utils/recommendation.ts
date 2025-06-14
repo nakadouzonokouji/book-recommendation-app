@@ -40,7 +40,7 @@ export const recommendBooks = (preferences: UserPreferences, limit: number = 5):
   return scoredBooks.slice(0, Math.min(limit, genreBooks.length));
 };
 
-export const getRecommendationExplanation = (result: RecommendationResult, preferences: UserPreferences): string => {
+export const getRecommendationExplanation = (result: RecommendationResult): string => {
   const { book, matchedTags } = result;
   
   if (matchedTags.length === 0) {
@@ -107,10 +107,10 @@ export const getRecommendationExplanation = (result: RecommendationResult, prefe
     'life': '人生・生き方',
     'philosophy': '哲学的',
     'culture': '文化・社会',
-    'personal': '個人的体験',
+    'experience': '個人的体験',
     'serious': '真面目',
     'humorous': 'ユーモア',
-    'emotional': '感動的',
+    'touching': '感動的',
     
     // ホラー
     'psychological': '心理的恐怖',
@@ -126,7 +126,7 @@ export const getRecommendationExplanation = (result: RecommendationResult, prefe
     'meiji': '明治時代',
     'politics': '政治・戦争',
     'daily-life': '日常・暮らし',
-    'culture': '文化・芸術',
+    'art': '文化・芸術',
     'entertaining': 'エンタメ重視'
   };
   

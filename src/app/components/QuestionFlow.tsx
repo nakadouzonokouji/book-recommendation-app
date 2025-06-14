@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Genre, Question, UserPreferences } from '../types';
+import { Genre, UserPreferences } from '../types';
 import { questionsByGenre } from '../data/questions';
 
 interface QuestionFlowProps {
