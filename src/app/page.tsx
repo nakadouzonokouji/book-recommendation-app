@@ -68,21 +68,21 @@ export default function Home() {
             </header>
 
             <main className="max-w-4xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
                 {genres.map((genre) => (
                   <button
                     key={genre.id}
                     onClick={() => handleGenreSelect(genre.id)}
-                    className="group relative p-6 rounded-xl border-2 transition-all duration-300 hover:scale-105 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-blue-300 hover:bg-blue-50 dark:hover:bg-blue-900/20 shadow-md hover:shadow-lg"
+                    className="group relative p-3 md:p-6 rounded-xl border-2 transition-all duration-300 hover:scale-105 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-blue-300 hover:bg-blue-50 dark:hover:bg-blue-900/20 shadow-md hover:shadow-lg"
                   >
                     <div className="text-center">
-                      <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <div className="text-2xl md:text-4xl mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">
                         {genre.icon}
                       </div>
-                      <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
+                      <h3 className="text-sm md:text-xl font-semibold text-gray-800 dark:text-white mb-1 md:mb-2 leading-tight">
                         {genre.name}
                       </h3>
-                      <p className="text-gray-600 dark:text-gray-300 text-sm">
+                      <p className="text-gray-600 dark:text-gray-300 text-xs md:text-sm hidden md:block">
                         {genre.description}
                       </p>
                     </div>
